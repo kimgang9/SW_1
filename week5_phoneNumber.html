@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function submit_chk(myForm){
+            let name_aa = document.querySelector('#user_name').value;
+            let tel_aa = document.querySelector('#user_tel').value;
+            if(tel_aa.length == 11){//연락처 11자리 이면 정상적으로 회원가입
+            tel.push(document.querySelector('#user_tel').value);
+            name.push(document.querySelector('#user_name').value);
+            document.getElementById("user_name").focus();
+            alert('회원가입 완료');
+            document.querySelector('#user_tel').value = null;
+            document.querySelector('#user_name').value = null;
+            return false;
+            }
+            else{// 연락처 11자리 입력 안하면 오류 팝업 + input초기화
+                alert('연락처를 잘못 입력하셨습니다.');
+                document.querySelector('#user_tel').value = null;
+                document.getElementById("user_tel").focus();
+                return false;
+            }
+            
+           
+           }
+        function reset_chk(myForm){
+            document.f1.user_name.focus();
+        }
+    </script>
+</head>
+<body onload = "document.f1.user_name.focus();">
+
+    <script>
+        let name = [];
+        let tel = [];
+
+        function a() {
+			document.querySelector('#name_result').innerHTML = name; //출력 버튼 함수
+            document.querySelector('#tel_result').innerHTML = tel;
+		}
+        function b(){
+            document.querySelector('#name_result').innerHTML = null; //지우기 버튼 함수
+            document.querySelector('#tel_result').innerHTML = null;
+        }
+        
+    </script>
+
+    <form action="#" method = "POST" name = "f1" onsubmit="return submit_chk(this);" onreset="return reset_chk(this);">
+    <fieldset>
+        <legend> 회원 가입 </legend>
+        <p>
+            <label for="user_name"> 이름 </label>
+            <input type="text" name="user_name" id="user_name"/>
+        </p>
+        <p>
+            <label for="user_name"> 연락처 </label>
+            <input type="text" name="user_tel" id="user_tel"/>
+        </p>
+        <p>
+            <input type="submit" value="회원가입"/>
+            <input type="reset" value="가입취소"/>
+        </p>
+    </fieldset>
+</form>
+    <fieldset>
+        <legend> 배열 출력 </legend>
+        <p>
+        <button onclick="a()">출력</button>
+        <button onclick="b()">지우기</button>
+        </p>
+        <p>
+            <div id="name_result"></div><br>
+            <div id="tel_result"></div>
+        </p>
+    </fieldset>
+</body>
+</html>
