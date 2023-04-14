@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>계산기 프로그램</title>
+	<link rel="stylesheet" href="css/cal.css">
+</head>
+<body>	
+	<div id="contents">
+		<ul>
+			<li>
+					<label for="num1">첫번째 수</label> 
+					<input type="text" id="num1">
+			</li>
+			<li>
+				<label for="num2">두번째 수</label>
+				<input type="text" id="num2">
+			</li>
+            <li>
+                <button onclick="sum()">+</button>
+            
+                <button onclick="sub()">-</button>
+           
+                <button onclick="mul()">*</button>
+            
+                <button onclick="div()">/</button>
+            
+                <button onclick="rem()">%</button>
+
+                <button onclick="clr()">clr</button>
+            </li>
+		</ul>
+        <div id="showResult"></div>
+	</div>	
+		
+	<script>
+		function sum() {
+			var num1_1 = document.querySelector('#num1').value;
+			var num2 = document.querySelector('#num2').value;
+			var savedPrice =Number(num1_1) + Number(num2);
+		
+			document.querySelector('#showResult').innerHTML = "두수의 합은 "+savedPrice+" 입니다."; 
+		}
+        function sub() {
+			var num1_1 = document.querySelector('#num1').value;
+			var num2 = document.querySelector('#num2').value;
+			var savedPrice = num1_1 - num2;
+		
+			document.querySelector('#showResult').innerHTML = "두수의 차는 "+savedPrice+" 입니다."; 
+		}
+        function mul() {
+			var num1_1 = document.querySelector('#num1').value;
+			var num2 = document.querySelector('#num2').value;
+			var savedPrice = num1_1 * num2;
+		
+			document.querySelector('#showResult').innerHTML = "두수의 곱은 "+savedPrice+" 입니다."; 
+		}		
+        function div() {
+			var num1_1 = document.querySelector('#num1').value; 
+			var num2 = document.querySelector('#num2').value; 
+			var savedPrice = num1_1 / num2;
+		
+			document.querySelector('#showResult').innerHTML = "두수의 나눗셈은 "+savedPrice+" 입니다."; 
+		}
+        function rem() {
+			var num1_1 = document.querySelector('#num1').value; 
+			var num2 = document.querySelector('#num2').value; 
+			var savedPrice = num1_1 % num2;
+		
+			document.querySelector('#showResult').innerHTML = "두수의 나머지는 "+savedPrice+" 입니다."; 
+		}
+        function clr() {
+			document.querySelector('#num1').value=null;
+			document.querySelector('#num2').value=null;
+			document.querySelector('#showResult').innerHTML = null; 
+		}
+	</script>
+</body>
+</html>
