@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="a">
+    <script>
+        var num = prompt("1~10사이의 정수 하나를 입력하세요.");
+        parseInt(num);
+        if(num<=0 || num>=11){
+            document.querySelector("#a").innerHTML = "범위를 초과하였습니다. 1~10사이의 정수를 입력해주세요."
+       exit();}
+        else if(isNaN(num)){
+            document.querySelector("#a").innerHTML = "문자를 입력하였습니다. 1~10사이의 정수를 입력해주세요."
+       exit(); }
+
+            let id = setInterval(() => {
+                document.querySelector("#a").innerHTML = num;
+                console.log(num--);
+            }, 1000);
+            setTimeout(() => {
+                clearInterval(id);
+            }, (num) * 1000 + 1000);
+        
+    </script>
+
+</body>
+</html>
