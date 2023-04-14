@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let array1 = [];//문자
+
+        let array2 = [];//숫자
+
+        while (true){//array1 에 배열로 저장
+            var a = prompt("숫자 or 문자를 입력하세요", '');
+            if(isNaN(a)){
+                array1.push(a);
+            }
+            else if(!isNaN(a) && a != null){
+                array2.push(a);
+            }
+            else{
+            }
+            if(!a) break; // 취소 버튼을 눌러서 null반환되면 중지.
+            
+        }
+
+        array1.sort();//문자열 오름차순 sort
+
+        array2.sort(function compare(a,b){// array2을 내림차순으로 정의 b-a 사용
+            if(!(isNaN(a)&&isNaN(b))) return b-a;
+        });
+        console.log(array2);
+        console.log(array1);
+
+        document.write(array2);
+        document.write('<br>');
+        document.write(array1);
+
+        
+
+    </script>
+</body>
+</html>
