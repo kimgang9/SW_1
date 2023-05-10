@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="input">
+        <input type="text" id="text_in"></input>
+        <button id="btn" onclick="text(); return false;">입력</button>
+        <button id="del" onclick="reset(); return false;">초기화</button>
+    </div>
+    <div id="out"></div>
+    <script>
+        function text(){
+            var new_text = document.createElement("p"); 
+            var text_in = document.querySelector("#text_in");					
+            var newText = document.createTextNode(text_in.value); 
+	        new_text.appendChild(newText); 
+            
+            var out = document.querySelector("#out");
+            out.appendChild(new_text);
+            text_in.value = "";
+        }
+        
+        function reset(){
+            var out = document.querySelector("#out");
+            while (out.firstChild) {
+                out.removeChild(out.firstChild);
+            }
+        }
+    </script>
+</body>
+</html>
