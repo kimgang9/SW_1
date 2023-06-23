@@ -1,0 +1,68 @@
+<ShapeTest >
+class Shape{
+   public double getArea() {
+      return 0;
+   }
+   public Shape() {
+      super();
+   }
+   public void draw() {
+      System.out.println("도형을 그렸습니다.");
+   }
+   public void print(Shape s) {
+      
+      System.out.println("넓이 : " + s.getArea());
+}
+}
+
+class Rectangle extends Shape{
+   
+   public void draw() {
+      System.out.print("사각형을 그렸습니다.");
+   }
+   public double getArea() {
+      int x = 2,y = 4;
+      return x*y;      
+   }
+   
+}
+
+class Triangle extends Shape{
+   public void draw() {   
+      System.out.print("삼각형을 그렸습니다.");
+   }
+   public double getArea() {
+      int base =2, height = 4;
+      return (base * height)/2;
+   }
+}
+
+class Circle extends Shape{
+   public void draw() {
+      System.out.print("원을 그렸습니다.");
+   }
+   public double getArea() {
+      int radius = 3;
+      return 3.141592 * radius * radius;
+   }
+}
+
+public class ShapeTest{
+   public static void main(String[] args) {
+      Rectangle r = new Rectangle();      
+      Triangle t = new Triangle();      
+      Circle c = new Circle();
+      
+      Shape[] arrayOfShapes;
+      arrayOfShapes = new Shape[3];
+      arrayOfShapes[0] = r;
+      arrayOfShapes[1] = t;
+      arrayOfShapes[2] = c;
+      
+      r.draw(); r.print(r);
+      System.out.println(" ");
+      t.draw(); t.print(t);
+      System.out.println(" ");
+      c.draw(); c.print(c);   
+   }
+}
